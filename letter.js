@@ -1,17 +1,19 @@
 var Letter = function (letter) {
-    var letter = letter;
-    var placeholder = "_";
-    var guessed = false;
-    var revealChar = function () {
-        if (guessed) {
-            return letter;
+    this.letter = letter;
+    this.placeholder = "_";
+    this.guessed = false;
+
+    this.revealChar = function () {
+        if (this.guessed) {
+            return this.letter;
         } else {
-            return placeholder;
+            return this.placeholder;
         }
     };
-    var checkGuess = function (guess) {
-        if (guess === letter) {
-            guessed = true;
+
+    this.checkGuess = function (guess) {
+        if (guess === this.letter) {
+            this.guessed = true;
         }
     };
 };
