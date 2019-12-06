@@ -1,19 +1,2 @@
-var Letter = function (letter) {
-    var letter = letter;
-    var placeholder = "_";
-    var guessed = false;
-    var revealChar = function () {
-        if (guessed) {
-            return letter;
-        } else {
-            return placeholder;
-        }
-    };
-    var checkGuess = function (guess) {
-        if (guess === letter) {
-            guessed = true;
-        }
-    };
-};
+var Letter = require("./letter.js")
 
-module.exports = Letter;
