@@ -1,12 +1,11 @@
 var Word = require("./word.js");
 var inquirer = require("inquirer");
 
-var wordsToGuess = ["caperucita"];
+var wordsToGuess = ["rhythmic", "oxygen", "unzip", "awkward", "zombie"];
+var position = Math.floor(Math.random() * 5);
 
-// var position = random
-
-var word = new Word(wordsToGuess[0]);
-console.log(word.toString())
+var word = new Word(wordsToGuess[position]);
+console.log(word.toString());
 
 // word.checkChar("a");
 // console.log(word.toString());
