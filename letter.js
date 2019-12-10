@@ -3,7 +3,7 @@ var Letter = function (letter) {
     this.placeholder = "_";
     this.guessed = false;
 
-    this.revealChar = function () {
+    this.toString = function () {
         if (this.guessed) {
             return this.letter;
         } else {
