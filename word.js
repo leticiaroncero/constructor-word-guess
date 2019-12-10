@@ -12,14 +12,14 @@ var Word = function (str) {
         var result = "";
         for (var i = 0; i < this.word.length; i++) {
             var char = this.word[i].toString();
-            result += char;
+            result += char + " ";
         }
         return result;
     }
 
     this.checkChar = function (guess) {
         for (var i = 0; i < this.word.length; i++) {
-            this.word[i].checkGuess(guess);
+            this.word[i].checkGuess(guess.toLowerCase());
         }
     }
 
