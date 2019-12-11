@@ -14,6 +14,10 @@ var Letter = function (letter) {
     this.checkGuess = function (guess) {
         if (guess === this.letter) {
             this.guessed = true;
+            return true;
+        }
+        else { 
+            return false; 
         }
     };
 };

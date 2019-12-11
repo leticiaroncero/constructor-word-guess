@@ -18,22 +18,22 @@ function guessRound() {
             message: "Guess a Letter",
         })
         .then(function (response) {
-            word.checkChar(response.guess)
-            console.log(word.toString())
+
+            if (word.checkChar(response.guess)) {
+                console.log("\nCorrect!!");
+            } else {
+                remainingGuesses--;
+                console.log("\nIncorrect!");
+                console.log("Remaining Guesses: " + remainingGuesses);
+            }
+
+            console.log(word.toString());
 
             if (remainingGuesses > 0) {
-                remainingGuesses--;
                 guessRound();
+            } else {
+                console.log("Game Over");
             }
         });
 };
-
-
-// wordsToGuess[0].Word();
-
-// function charToGuess(wordsToGuess) {
-//     for (var i = 0; i < wordsToGuess.length; i++) {
-//         var nextGuess = wordsToGuess[i]
-//     }
-// };
 

@@ -18,9 +18,13 @@ var Word = function (str) {
     }
 
     this.checkChar = function (guess) {
+        var correctGuess = false;
         for (var i = 0; i < this.word.length; i++) {
-            this.word[i].checkGuess(guess.toLowerCase());
+            if (this.word[i].checkGuess(guess.toLowerCase())) {
+                correctGuess = true;
+            }
         }
+        return correctGuess;
     }
 
 };
