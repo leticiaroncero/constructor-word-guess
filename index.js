@@ -28,8 +28,9 @@ function guessRound() {
             }
 
             console.log(word.toString());
-
-            if (remainingGuesses > 0) {
+            if (!word.toString().contains("_")) {
+                console.log("You Win!!");
+            } else if (remainingGuesses > 0) {
                 guessRound();
             } else {
                 console.log("Game Over");
