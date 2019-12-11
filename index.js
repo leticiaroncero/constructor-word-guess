@@ -16,6 +16,13 @@ function guessRound() {
             type: "input",
             name: "guess",
             message: "Guess a Letter",
+            validate: function validateChar(guess) {
+                if (guess.length === 1 && /[a-z]/.test(guess)) {
+                    return true
+                } else {
+                    return "Please, type a letter";
+                }
+            }
         })
         .then(function (response) {
 
