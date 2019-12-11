@@ -2,7 +2,7 @@ var Word = require("./word.js");
 var inquirer = require("inquirer");
 
 var wordsToGuess = ["rhythmic", "oxygen", "unzip", "awkward", "zombie"];
-var position = Math.floor(Math.random() * 5);
+var position = Math.floor(Math.random() * wordsToGuess.length);
 
 var word = new Word(wordsToGuess[position]);
 console.log(word.toString());
@@ -21,9 +21,9 @@ function guessRound() {
             word.checkChar(response.guess)
             console.log(word.toString())
 
-            if (remainingGuesses <= 10) {
-                guessRound();
+            if (remainingGuesses > 0) {
                 remainingGuesses--;
+                guessRound();
             }
         });
 };
