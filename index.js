@@ -20,15 +20,15 @@ function guessRound() {
         .then(function (response) {
 
             if (word.checkChar(response.guess)) {
-                console.log("\nCorrect!!");
+                console.log("Correct!!");
             } else {
                 remainingGuesses--;
-                console.log("\nIncorrect!");
+                console.log("Incorrect!");
                 console.log("Remaining Guesses: " + remainingGuesses);
             }
 
             console.log(word.toString());
-            if (!word.toString().contains("_")) {
+            if (!word.toString().includes("_")) {
                 console.log("You Win!!");
             } else if (remainingGuesses > 0) {
                 guessRound();
